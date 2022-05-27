@@ -25,13 +25,34 @@ export const lastFirst = (name= {first, last}, vacio= 2) => (name.last==null && 
 
 export const subArray = (array1,array2) => (array2.length == 0 ? [] : [array1[array2[0]], array1[array2[1]]]);
 
-// export const over21 = (person) => (person[0].age >= 21 && person[1].age >= 21 && person[2].age >= 21 ? [person[0],person[1],person[2]] 
-//                                 : person[0].age >= 21 && person[1].age >= 21 ? [person[0],person[1]] 
-//                                 : person[1].age >= 21 && person[2].age >= 21 ? [person[1],person[2]] 
-//                                 : []);
-
 export const over21 = (person) => (person.filter((p) => p["age"] >= 21));
 
-export const product = (product) => product[0]*product[1]*product[2]*product[3]*product[4]
+export const product = (product) => product[0]*product[1]*product[2]*product[3]*product[4];
 
-export
+//export const getRepeats = (arry) => Array.from(new Set(arry.filter((item, index) => arry.indexOf(item) !== index))); 
+
+export const getRepeats = (arry) => {
+     let results = [];
+     for (let j = 0; j < arry.length; j++){
+         for (let i = 0; i < arry.length; i++){
+            if (arry[j] == arry[i]){
+             results.push(arry[i]);
+         }
+        }
+     }
+  return results;
+ };
+
+
+
+
+
+export const aboveAverage = (arry) => (arry.filter((x) => x["score"] > ((arry.map(item => item.score).reduce((prev, curr) => prev + curr, 0)/arry.length))));
+
+export const reverseNumber = (num) => Number(String(num).split('').reverse().join(''));
+
+export const isWordAnagram = (word1, word2) => (word1.split("").sort().join("") === word2.split("").sort().join("") ? true : false);
+
+export const isPhraseAnagram = (sent1, sent2) => (sent1.replaceAll(' ', '').toLowerCase().split("").sort().join("") === sent2.replaceAll(' ', '').toLowerCase().split("").sort().join("") ? true : false);
+
+export const longestWords = (arry) => 1; 
