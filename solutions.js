@@ -29,23 +29,21 @@ export const over21 = (person) => (person.filter((p) => p["age"] >= 21));
 
 export const product = (product) => product[0]*product[1]*product[2]*product[3]*product[4];
 
-//export const getRepeats = (arry) => Array.from(new Set(arry.filter((item, index) => arry.indexOf(item) !== index))); 
+//export const getRepeats = (arry) => Array.from(new Set(arry.filter((item, index) =>array.indexOf(item) !== index))); 
 
-export const getRepeats = (arry) => {
+export const getRepeats = (array) => {
      let results = [];
-     for (let j = 0; j < arry.length; j++){
-         for (let i = 0; i < arry.length; i++){
-            if (arry[j] == arry[i]){
-             results.push(arry[i]);
+     for (let j = 0; j <array.length; j++){
+         console.log(array[j],'j loop')
+         for (let i = j+1; i <array.length; i++){
+             console.log(array[i],'i loop')
+            if (array[j] ==array[i]){
+             results.push(array[i]);
          }
         }
      }
-  return results;
- };
-
-
-
-
+  return [...new Set(results)];
+ }; 
 
 export const aboveAverage = (arry) => (arry.filter((x) => x["score"] > ((arry.map(item => item.score).reduce((prev, curr) => prev + curr, 0)/arry.length))));
 
