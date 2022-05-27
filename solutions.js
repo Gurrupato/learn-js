@@ -33,3 +33,5 @@ export const subArray = (array1,array2) => (array2.length == 0 ? [] : [array1[ar
 export const over21 = (person) => (person.filter((p) => p["age"] >= 21));
 
 export const product = (product) => product[0]*product[1]*product[2]*product[3]*product[4]
+
+export
