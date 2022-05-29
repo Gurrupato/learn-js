@@ -12,7 +12,7 @@ export const resultText = (result) => (
 const argText = inputs => (
   inputs.map(resultText).join(', ')
 );
-
+  
 const evalTest = (code, inputs, output) => {
   try {
     return code(...inputs);
