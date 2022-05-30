@@ -82,4 +82,11 @@ export const isPhraseAnagram = (sent1, sent2) =>
     ? true
     : false;
 
-export const longestWords = (arry) => 1;
+export const longestWords = (text) => {
+  const words = text
+    .replace(/[^a-zA-Z\u00C0-\u017F\s]/, "")
+    .split(" ")
+    .filter((i) => i.length > 0);
+  const max = words.reduce((l, w) => Math.max(l, w.length), 0);
+  return [...new Set(words.filter((t) => t.length == max))];
+};
